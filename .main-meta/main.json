@@ -4,13 +4,13 @@
     "content": {
         "metaDataVersion": "1.1.0",
         "name": "com.microchip.mcu8.mplabx.project.avr128da48-cnano-ext-int-wakeup-mcc",
-        "version": "1.0.0",
-        "displayName": "AVR128DA48 External Interrupt Wake Up Code Example",
+        "version": "1.0.1",
+        "displayName": "GPIO Wake Up",
         "projectName": "avr128da48-cnano-ext-int-wakeup-mcc",
-        "shortDescription": "Code example for wakeing up from idle sleep mode when button is pressed.",
+        "shortDescription": "This project showcases how the General Purpose Input/Output pins on the AVR128DA48 can be used as inputs and outputs. The device is put in Sleep mode and an external interrupt is used to wake it up.",
         "ide": {
-            "name": "MPLABX",
-            "semverRange": ">=5.40"
+            "name": "MPLAB X",
+            "semverRange": ">=5.40.0"
         },
         "compiler": [
 			{
@@ -37,14 +37,18 @@
             }
         },
         "author": "Microchip",
-        "peripherals": [
-            "SLP_CTRL"
+        "subcategories": [
+            [
+				"Peripherals",
+				"PORT"
+            ]
+        ],
+        "peripherals":[
+			"PORT"
         ],
         "keywords": [
-            "mcc",
-            "led",
-            "button",
-            "sleep"		
+            "Getting Started",
+            "Sleep"		
         ],
 		"additionalData": {
 			"longDescription": {
