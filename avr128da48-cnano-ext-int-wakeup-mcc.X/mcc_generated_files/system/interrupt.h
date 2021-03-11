@@ -1,3 +1,12 @@
+/**
+  @Company
+    Microchip Technology Inc.
+
+  @Description
+    This Source file provides APIs.
+    Generation Information :
+    Driver Version    :   1.0.0
+*/
 /*
 Copyright (c) [2012-2020] Microchip Technology Inc.  
 
@@ -31,26 +40,26 @@ Copyright (c) [2012-2020] Microchip Technology Inc.
     third party licenses prohibit any of the restrictions described here, 
     such restrictions will not apply to such third party software.
 */
-#include "mcc_generated_files/system/system.h"
-#include <avr/sleep.h>
-#include <util/delay.h>
-#include <avr/sleep.h>
 
-void SW0_Interrupt(void)
-{
-    LED0_SetHigh();
-}
 
-int main(void)
-{
-    SYSTEM_Initialize();
-    
-    PC7_SetInterruptHandler(SW0_Interrupt);
-    while (1)
-    {
-        sleep_mode();
-        
-        _delay_ms(200);
-        LED0_SetLow();
-    }
+#ifndef INTERRUPT_H
+#define INTERRUPT_H
+
+#include "../system/utils/compiler.h"
+#include "ccp.h"
+#include "../system/utils/atomic.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif /**                                                                                                             \
+  * \brief Initialize cpuint interface                                                                                 \
+  *                                                                                                                    \
+  * \return Initialization status                                                                                      \
+  */
+int8_t CPUINT_Initialize();
+
+#ifdef __cplusplus
 }
+#endif
+
+#endif /* INTERRUPT_H */

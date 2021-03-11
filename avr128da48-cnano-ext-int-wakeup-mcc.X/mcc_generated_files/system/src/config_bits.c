@@ -1,3 +1,12 @@
+/**
+  @Company
+    Microchip Technology Inc.
+
+  @Description
+    This Source file provides APIs.
+    Generation Information :
+    Driver Version    :   1.0.0
+*/
 /*
 Copyright (c) [2012-2020] Microchip Technology Inc.  
 
@@ -31,26 +40,21 @@ Copyright (c) [2012-2020] Microchip Technology Inc.
     third party licenses prohibit any of the restrictions described here, 
     such restrictions will not apply to such third party software.
 */
-#include "mcc_generated_files/system/system.h"
-#include <avr/sleep.h>
-#include <util/delay.h>
-#include <avr/sleep.h>
 
-void SW0_Interrupt(void)
-{
-    LED0_SetHigh();
-}
 
-int main(void)
+#include <avr/io.h>
+
+/**
+ * Configures Fuse bits
+ */
+
+FUSES = 
 {
-    SYSTEM_Initialize();
-    
-    PC7_SetInterruptHandler(SW0_Interrupt);
-    while (1)
-    {
-        sleep_mode();
-        
-        _delay_ms(200);
-        LED0_SetLow();
-    }
-}
+  .BODCFG = ACTIVE_DISABLE_gc | LVL_BODLEVEL0_gc | SAMPFREQ_128Hz_gc | SLEEP_DISABLE_gc,
+  .BOOTSIZE = 0,
+  .CODESIZE = 0,
+  .OSCCFG = CLKSEL_OSCHF_gc,
+  .SYSCFG0 = CRCSEL_CRC16_gc | CRCSRC_NOCRC_gc | RSTPINCFG_GPIO_gc,
+  .SYSCFG1 = SUT_0MS_gc,
+  .WDTCFG = PERIOD_OFF_gc | WINDOW_OFF_gc,
+};

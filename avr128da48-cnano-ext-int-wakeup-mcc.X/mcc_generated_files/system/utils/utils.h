@@ -1,3 +1,12 @@
+/**
+  @Company
+    Microchip Technology Inc.
+
+  @Description
+    This Source file provides APIs.
+    Generation Information :
+    Driver Version    :   1.0.0
+*/
 /*
 Copyright (c) [2012-2020] Microchip Technology Inc.  
 
@@ -31,26 +40,33 @@ Copyright (c) [2012-2020] Microchip Technology Inc.
     third party licenses prohibit any of the restrictions described here, 
     such restrictions will not apply to such third party software.
 */
-#include "mcc_generated_files/system/system.h"
-#include <avr/sleep.h>
-#include <util/delay.h>
-#include <avr/sleep.h>
 
-void SW0_Interrupt(void)
-{
-    LED0_SetHigh();
-}
 
-int main(void)
-{
-    SYSTEM_Initialize();
-    
-    PC7_SetInterruptHandler(SW0_Interrupt);
-    while (1)
-    {
-        sleep_mode();
-        
-        _delay_ms(200);
-        LED0_SetLow();
-    }
+/**
+ * \defgroup doc_driver_utils AVR Code utility functions
+ *
+ * Compiler abstraction layer and code utilities for AVR.
+ * This module provides various abstraction layers and utilities
+ * to make code compatible between different compilers.
+ *
+ * \{
+ */
+
+#ifndef UTILS_H_INCLUDED
+#define UTILS_H_INCLUDED
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/**
+ * \brief Retrieve array size
+ */
+#define ARRAY_SIZE(a) (sizeof(a) / sizeof((a)[0]))
+
+/** @} */
+
+#ifdef __cplusplus
 }
+#endif
+#endif /* UTILS_H_INCLUDED */

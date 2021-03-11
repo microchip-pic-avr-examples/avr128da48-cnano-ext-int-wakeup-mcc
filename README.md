@@ -12,11 +12,11 @@ More details and code examples on the AVR128DA48 can be found at the following l
 
 
 ## Software Used
-- MPLAB® X IDE 5.40 or newer [(microchip.com/mplab/mplab-x-ide)](http://www.microchip.com/mplab/mplab-x-ide)
-- MPLAB® XC8 2.20 or a newer compiler [(microchip.com/mplab/compilers)](http://www.microchip.com/mplab/compilers)
-- MPLAB® Code Configurator (MCC) 3.95.0 or newer [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
-- MPLAB® Code Configurator (MCC) Device Libraries 8-bit AVR MCUs 2.3.0 or newer [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
-- AVR-Dx 1.3.65 or newer Device Pack
+- MPLAB® X IDE 5.45 or newer [(microchip.com/mplab/mplab-x-ide)](http://www.microchip.com/mplab/mplab-x-ide)
+- MPLAB® XC8 2.31 or newer [(microchip.com/mplab/compilers)](http://www.microchip.com/mplab/compilers)
+- MPLAB® Code Configurator (MCC) 4.1.0 or newer [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
+- MPLAB® Code Configurator Library 1.37.9 or newer [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
+- AVR-Dx 1.6.88 or newer Device Pack
 
 
 ## Hardware Used
@@ -28,9 +28,15 @@ The AVR128DA48 Curiosity Nano Development Board is used as test platform
 
 The following configurations must be made for this project:
 
+CLKCTRL: default
+
+Interrupt Manager:
+ - Global Interrupt Enabled
+
 SLPCTRL:
- - Enabled
- - Idle Mode
+ - Sleep: Enabled
+ - Sleep Mode: Idle
+ - Performance Mode: Auto
 
 |Pin           | Configuration      |
 | :----------: | :----------------: |
