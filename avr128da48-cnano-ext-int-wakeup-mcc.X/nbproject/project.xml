@@ -4,12 +4,8 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>avr128da48-cnano-ext-int-wakeup-mcc</name>
-            <creation-uuid>895d0628-8f9e-4e65-813f-62dcbd9c1e33</creation-uuid>
+            <creation-uuid>65713675-b845-435c-bb92-d7aa296fba2a</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions>c</c-extensions>
-            <cpp-extensions/>
-            <header-extensions>h</header-extensions>
-            <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList/>

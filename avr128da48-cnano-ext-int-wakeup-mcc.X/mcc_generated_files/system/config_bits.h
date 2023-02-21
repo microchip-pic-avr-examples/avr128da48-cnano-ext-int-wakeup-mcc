@@ -1,14 +1,15 @@
 /**
- * Assembler Header File
+ * CONFIGURATION BITS Generated Driver Header File
  * 
- * @file assembler.h
+ * @file config_bits.h
  * 
- * @ingroup config_bitsdriver
+ * @defgroup config_bitsdriver Configuration Bits Driver 
  * 
- * @brief This file contains the assembler header file for the configuration bits driver.
+ * @brief This file contains the generated header file for the Configuration bits driver.
  *
  * @version Driver Version 1.0.0
 */
+    
 /*
 © [2023] Microchip Technology Inc. and its subsidiaries.
 
@@ -30,20 +31,12 @@
     THIS SOFTWARE.
 */
 
+#ifndef CONFIG_BITS_H
+#define	CONFIG_BITS_H
 
-#ifndef ASSEMBLER_H_INCLUDED
-#define ASSEMBLER_H_INCLUDED
+#include "../system/clock.h"
 
-#if !defined(__ASSEMBLER__) && !defined(__IAR_SYSTEMS_ASM__) && !defined(__DOXYGEN__)
-#error This file may only be included from assembly files
-#endif
-
-#if defined(__ASSEMBLER__)
-#include "assembler/gas.h"
-#include <avr/io.h>
-#elif defined(__IAR_SYSTEMS_ASM__)
-#include "assembler/iar.h"
-#include <ioavr.h>
-#endif
-
-#endif /* ASSEMBLER_H_INCLUDED */
+#endif //CONFIG_BITS_H
+/**
+ End of File
+*/
