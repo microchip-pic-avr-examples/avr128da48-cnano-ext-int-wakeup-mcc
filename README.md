@@ -2,7 +2,7 @@
 
 # External Interrupt Wake Up Example using the AVR128DA48 Microcontroller with MCC Melody
 
-This repository provides an MCC Melody-generated code example for n external interrupt wake up using the MPLAB® X project.
+This repository provides an MCC Melody-generated code example for an external interrupt wake up using the MPLAB® X project.
 
 
 ## Related Documentation
@@ -49,22 +49,22 @@ The following peripheral and clock configurations are set up using MCC Melody fo
   <br><img src="images/slpctrl_mcc.png" width="350">
 
 - Pin Grid View:
-  - GPIO Input: PC6
-  - GPIO Output: PC7
+  - GPIO Input: PC7
+  - GPIO Output: PC6
   <br><img src="images/pin_grid_view_mcc.png" width="1000">
 
 - Pins:
   - PC6:
     - GPIO
+    - Output
+    - Custom Name: LED0
+    - Inverted I/O: Enabled
+  - PC7:
+    - GPIO
     - Input
     - Custom Name: SW0
     - Pull-up: Enabled
     - Input/Sense Configuration: Sense Falling Edge
-  - PC7:
-    - GPIO
-    - Output
-    - Custom Name: LED0
-    - Inverted I/O: Enabled
   - <img src="images/pins_mcc.png" width="1000">
 
 The following pin configuration must be made for this project:
@@ -72,8 +72,8 @@ The following pin configuration must be made for this project:
 
 |  Pin  |    Configuration    |      Function       |
 | :---: | :-----------------: | :-----------------: |
-|  PC6  | Digital Input       | GPIO Pin - SW0      |
-|  PC7  | Digital Output      | GPIO Pin - LED0     |
+|  PC6  | Digital Output      | GPIO Pin - LED0     |
+|  PC7  | Digital Input       | GPIO Pin - SW0      |
 
 ## 2. Demo:
 
@@ -81,13 +81,15 @@ In the main loop, the program starts by entering the CPU in Sleep Mode. When the
 
 <br><img src="images/flow-diagram.png" width="500">
 
-To demonstrate the functionality of the example, SW0 (PC6) push-button and LED0 (PC7) on-board LED are used as in the next demo:
+To demonstrate the functionality of the example, SW0 (PC7) push-button and LED0 (PC6) on-board LED are used as in the next demo:
 
 <br><img src="images/AVR-DA_ext_int.gif" width="500">
 
-The next snapshot from the logic analyzer software is used to demonstrate the fixed amount of time while the LED0 is turned on (200ms), with different trigger times of the pressed button.
+The next snapshot from the logic analyzer software is used to demonstrate the fixed amount of time while the LED0 is turned on (200ms), with different trigger times of the pressed button. 
 
 <br><img src="images/logic_analyzer.png" width="1000">
+
+**NOTE:** The on-board LED is turned on while the signal is low, and the button is pressed while the signal is low too.
 
 ## 3. Summary
 This example demonstrates a simple implementation of a sleep operation with an external interrupt triggering an LED blink.
